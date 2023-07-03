@@ -43,10 +43,10 @@ def draw_red_alert(mybasecolors, colors_to_replace, replacement_colors, cgac, co
         for y in range(new_image.get_height()):
             pixel_color = new_image.get_at((x, y))
             pixel_color = pixel_color[:3]
-            replace_color = 
-            for i in mybasecolors:
-                replace_color=cgac[i[0]]
-                replacement_color=cgac[i[1]]
+            for i in range(len(mybasecolors)):
+                print(i)
+                replace_color=cgac[mybasecolors[i]]
+                replacement_color=cgac[replacement_colors[i]]
                 if pixel_color == replace_color:
                     new_image.set_at((x, y), replacement_color)
                     break
