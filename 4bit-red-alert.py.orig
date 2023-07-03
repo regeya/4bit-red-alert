@@ -34,6 +34,7 @@ for i in range(len(cgac)):
     colornums[cgac[i]] = i
 
 colors_to_replace = list(range(3,15,1))
+
 replacement_colors = [8, 4, 6, 12, 14] + [0] * 7
 
 def draw_red_alert(mybasecolors, colors_to_replace, replacement_colors, cgac, colornums, image):
@@ -42,9 +43,16 @@ def draw_red_alert(mybasecolors, colors_to_replace, replacement_colors, cgac, co
         for y in range(new_image.get_height()):
             pixel_color = new_image.get_at((x, y))
             pixel_color = pixel_color[:3]
-            for i in range(len(replacement_colors)):
+<<<<<<< HEAD
+            for i in mybasecolors:
+                replace_color=cgac[i[0]]
+                replacement_color=cgac[i[1]]
+=======
+            for i in range(len(mybasecolors)):
+                print(i)
                 replace_color=cgac[mybasecolors[i]]
                 replacement_color=cgac[replacement_colors[i]]
+>>>>>>> caeb33c (minor changes to simplify script)
                 if pixel_color == replace_color:
                     new_image.set_at((x, y), replacement_color)
                     break
