@@ -8,7 +8,7 @@ screen_width, screen_height = 960, 720
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("RED ALERT!!!")
 
-image = pygame.image.load("/home/shane/Documents/tandy-red-alert.png")
+image = pygame.image.load("tandy-red-alert.png")
 
 cgac = [
     (0, 0, 0),        # Black
@@ -43,7 +43,7 @@ def draw_red_alert(mybasecolors, colors_to_replace, replacement_colors, cgac, co
             pixel_color = new_image.get_at((x, y))
             pixel_color = pixel_color[:3]
             for i in range(len(replacement_colors)):
-                replace_color=cgac[mybasecolors[i]]
+                replace_color=cgac[colors_to_replace[i]]
                 replacement_color=cgac[replacement_colors[i]]
                 if pixel_color == replace_color:
                     new_image.set_at((x, y), replacement_color)
